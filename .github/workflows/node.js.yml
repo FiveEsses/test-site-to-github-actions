@@ -26,9 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
       # I have no idea why this npm install jasmine has to happen first here
       # but if it doesn't, nothing works (note: the install is still in
       # this package's devDependencies, so...???
-    - run: npm install jasmine
-    - run: npm ci
-    - run: npm test
+    - name: npm install, test, export 
+      run: |
+        npm install jasmine
+        npm ci
+        npm run export
