@@ -1,0 +1,24 @@
+{
+  "name": "test-site-to-github-actions",
+  "version": "1.0.0",
+  "description": "testing out github actions with a very simple site",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jasmine",
+    "clean": "",
+    "build": "rollup src/index.js --file dist/index.js --format es",
+    "cphtml": "copyfiles -u 1 src/**/*.html dist",
+    "cpcss": "copyfiles -u 1 src/**/*.css dist",
+    "cpall": "npm run cphtml && npm run cpcss",
+    "export": "npm run test && npm run clean && npm run build && npm run cpall"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDpendencies": {
+    "jasmine": "^5.1.0",
+    "rollup": "^4.5.0",
+    "copyfiles": "^2.4.1"
+  }
+}

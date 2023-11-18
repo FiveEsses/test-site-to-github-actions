@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some Web Page</title>
+    <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+    <h1>Some Web Page - Guess it does a thing</h1>
+    <section id="content">
+        <script type="module">
+            import * as index from './index.js';
+            const { A, D } = index;
+            console.dir({ A, D });
+        </script>
+    </section>
+</body>
+</html>
