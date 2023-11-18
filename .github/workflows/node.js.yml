@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x, 20.x]
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -26,6 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+      # I have no idea why this npm install jasmine has to happen first here
+      # but if it doesn't, nothing works (note: the install is still in
+      # this package's devDependencies, so...???
     - run: npm install jasmine
     - run: npm ci
     - run: npm test
