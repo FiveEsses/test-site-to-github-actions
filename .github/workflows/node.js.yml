@@ -32,6 +32,6 @@ jobs:
       # this package's devDependencies, so...???
     - name: npm install, test, export 
       run: |
-        npm install jasmine
+        npm install jasmine rollup copyfiles
         npm ci
         npm run export
